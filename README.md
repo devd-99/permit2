@@ -1,6 +1,6 @@
 # Uniswap V3 Arbitrum Swap Example
 
-This project demonstrates how to interact with Uniswap V3 on the Arbitrum network using TypeScript and Deno. It includes functionality for token swaps, gas estimation, and handling Permit2 approvals.
+This project demonstrates how to interact with Uniswap V3 on the Arbitrum network using TypeScript and Deno. It includes functionality for token swaps, gas estimation, handling Permit2 approvals, and purchasing WETH.
 
 ## Prerequisites
 
@@ -42,9 +42,14 @@ This project demonstrates how to interact with Uniswap V3 on the Arbitrum networ
    ```
    Replace `your_arbitrum_rpc_url` with your actual Arbitrum/similar RPC URL.
 
-## Running the Script
+## Running the Scripts
 
-To run the main script:
+To purchase WETH:
+```
+deno run -A ethPurchase.ts
+```
+
+To run the main script (Swap WETH for DAI):
 ```
 deno run -A main.ts
 ```
@@ -59,6 +64,7 @@ deno run -A check_permit2_allowance.ts
 
 - `main.ts`: The main script that performs token swaps on Uniswap V3.
 - `check_allowance.ts`: A utility script to check Permit2 allowances.
+- `ethPurchase.ts`: A script to purchase WETH by wrapping ETH.
 - `main_test.ts`: A simple test file (currently contains a placeholder test).
 
 ## Key Features
@@ -67,9 +73,14 @@ deno run -A check_permit2_allowance.ts
 2. Gas estimation and optimization
 3. Permit2 integration for token approvals
 4. Error handling and logging
+5. Purchasing WETH by wrapping ETH
 
+## Purchasing WETH
+
+The `ethPurchase.ts` script allows you to wrap ETH to WETH. This is useful when you need WETH for trading on Uniswap or other decentralized exchanges. Better methods exist (Using other Universal router methods), but this is a simple way to get WETH while I figure out the Universal router. To use this script:
+
+1. Ensure your `.env` file is set up correctly with your wallet address,
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
