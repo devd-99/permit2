@@ -1,0 +1,4 @@
+.env
+main_old.ts
+*.txt
+node_modules
